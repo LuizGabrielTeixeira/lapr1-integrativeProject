@@ -1,43 +1,43 @@
-# **LAPR1_24_25_DAB_02 - TechTitans**
+# Integrative Project - LAPR1 (Laboratory and Project I)
 
-Projeto Integrativo de LAPR1 do grupo 2 - TechTitans.
+## **About:**
+This project involves the development of a Java application for image compression, random generation, reconstruction, and facial recognition using the ***Eigenfaces algorithm***. Since this project is part of the first semester of Computer Engineering, we face the challenge of developing this software in just one class and one branch.
 
----
+## **Scenario:**
+The project to be developed this academic year is a software application for the **European Intelligence Agency (EIA)** that allows the representation and identification of individuals using eigenfaces (eigenvectors) (Turk & Pentland, 1991), derived from a set of human face images/photos. The EIA possesses a large image database that it does not intend to share and seeks to find a compact representation of this database that can be distributed across all affiliated European institutions to identify individuals in the countries where they operate. To achieve its goals, the EIA wants the system's core to be the decomposition of an image/matrix into eigenvalues and eigenvectors, particularly *the eigenfaces*. The EIA also wants to perform a sensitivity study on the number of eigenfaces (eigenvalues and eigenvectors) to be used in the decomposition of each image.
 
-## **Descrição**
-Este projeto consiste no desenvolvimento de uma aplicação em Java para compactação, geração aleatória, reconstrução e identificação de imagens utilizando a técnica de **Eigenfaces**. O objetivo é implementar funcionalidades que auxiliem na representação e comparação de imagens de maneira eficiente, conforme solicitado no enunciado.
+## **Application Features and Algorithms:**
+Since a grayscale image can be represented as a matrix, and to facilitate the development and evaluation of the project, the EIA defines three tasks/features to be included in the application:
+ 1. Eigen decomposition (Larson, 2012; Ghaoui L., 2024) of a symmetric matrix;
+ 2. Reconstruction of each image (grayscale image (0-255)) using the most relevant eigenfaces (Turk & Pentland, 1991);
+ 3. Given an image, identify the closest/most similar image in the image database using the weights of a set of eigenfaces.
+ 4. Random image generation: Generate random images by combining eigenfaces in a way that creates new synthetic images, allowing for the exploration of various facial variations based on the eigenfaces in the dataset.
+    
+For the execution of these tasks, it is also necessary to implement modules for reading and writing matrices/images stored in folders, as well as modules for calculating a set of statistics and metrics.
 
----
-
-## **Integrantes**
-| Nome                                    | Número    |
+## **Development Team - TechTitans - LAPR1_24_25_DAB_02**
+| Name                                  | Student number|
 |-----------------------------------------|-----------|
 | Rita Mafalda Martins de Oliveira        | 1240729   |
 | Alexandre Pereira Henrique              | 1240720   |
 | Rafael Pinto Vieira                     | 1241286   |
 | Luiz Gabriel de Souza Sargaço Teixeira  | 1230350   |
 
----
+## **Application Structure**
+The client requested that the program allow for either an interactive or non-interactive mode (with or without arguments when running the program). If the non-interactive mode is chosen, the system should **verify the output generated after each execution** when the same function is selected again. This is because the .csv and .txt files containing all the output that would be presented on the console (in non-interactive mode) will be overwritten. However, the images are not overwritten, allowing them to be compared.
 
-## **Estrutura do Projeto**
-
-Quando o utilizador escolher entre o modo interativo ou não interativo (com ou sem argumentos ao executar o programa), **após cada execução verificar o ‘output’ gerado**, quando escolhido a mesma função.
-Pois os arquivos .csv e o .txt com todo o ‘output’ que seria apresentado em consola (não interativo) serão sobrescritos!
-As imagens não são sobrescritas, podendo assim, serem comparadas, mas os demais arquivos (.txt e .csv) !
-
-### **Estrutura do comando para utilização do programa via terminal:**
-
-Se deseja utilizar o programa em modo **interativo**, não coloque os argumentos, utilize apenas o comando:
+## **Command Guide for Program Usage:**
+If you wish to use the program in interactive mode, do not provide any arguments, simply use the following command:
 * java -cp "./code/lib/commons-math3-3.6.1.jar" ./code/src/LAPR1_24_25_DAB_02.java
 
-Se deseja utilizar o programa em modo **não interativo**, coloque os argumentos conforme a seguir:
+If you wish to use the program in non-interactive mode, provide the arguments as follows:
 * java -cp "./code/lib/commons-math3-3.6.1.jar" ./code/src/LAPR1_24_25_DAB_02.java -f X -k Y -i Z -j W**
 
-Onde deverá substituir X, Y, Z e W pelos seguintes argumentos:
-* [ -f ]:Este argumento, X recebe a função a executar, podendo ser qualquer número de 1 a 4.
-* [ -k ]:Este argumento, Y recebe a quantidade de vetores próprios a utilizar. (se o valor for -1 ou superior à quantidade de vetores próprios existentes então a quantidade de vetores próprios usados será o máximo).
-* [ -i ]:Este argumento, Z recebe a localização da matriz/imagem (em csv) de ‘input’ a utilizar nas funcionalidades 1 e 3.
-* [ -d ]:Este argumento, W recebe a localização da base de imagens (em csv) de ‘input’ a utilizar nas funcionalidades 2, 3 e 4.
+Where you should replace X, Y, Z, and W with the following arguments:
+- [ -f ]: This argument, X, accepts the function to be executed, which can be any number from 1 to 4.
+- [ -k ]: This argument, Y, accepts the number of eigenvectors to be used. (If the value is 1 or greater than the total number of available eigenvectors, the maximum number of eigenvectors will be used).
+- [ -i ]: This argument, Z, accepts the location of the input matrix/image (in CSV format) to be used for functions 1 and 3.
+- [ -d ]: This argument, W, accepts the location of the image database (in CSV format) to be used for functions 2, 3, and 4.
 
 ```plaintext
 LAPR1_24_25_DAB_02
