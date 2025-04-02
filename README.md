@@ -41,7 +41,9 @@ LAPR1_24_25_DAB_02
 │       └── LAPR1_24_25_DAB_02.java       # This is the main application file that implements the core functionality of the project.
 │
 ├── Docs                                  # This directory contains documentation files for the project.
-│   └── EnunciadoLAPR1_v0.pdf             
+│   ├── EnunciadoLAPR1_v0.pdf
+│   ├── lapr1-24-25_DAB_apresentação.pdf
+│   └── LAPR1_DAB_02_relatorioV2.pdf
 │
 ├── Input                                 # This directory stores the input files for the program.
 │       ├── Func1                        
