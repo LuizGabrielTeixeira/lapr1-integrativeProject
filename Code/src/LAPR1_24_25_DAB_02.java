@@ -30,13 +30,13 @@ public class LAPR1_24_25_DAB_02 {
         if (checkCorrectParametersStructure(args)) {
             runNonInteractive(args);
         } else {
-            runInterative();
+            runInteractive();
         }
         scanner.close();
     }
 
     //* ------------------ Modos de execução ------------------
-    public static void runInterative() {
+    public static void runInteractive() {
         int function;
 
         // Roda enquanto a função for inválida
@@ -75,7 +75,7 @@ public class LAPR1_24_25_DAB_02 {
         csvLocation = receiveCsvLocation(args, function);
         dataBaseLocation = receiveDataBaseLocation(args);
 
-        checkExistanceFileDirectory(csvLocation);
+        checkExistenceFileDirectory(csvLocation);
 
         String[] csvFiles = getCSVFileNames(dataBaseLocation);
 
@@ -94,13 +94,13 @@ public class LAPR1_24_25_DAB_02 {
             errorGeneral("Erro ao criar o arquivo de saída: " + e.getMessage());
         }
 
-        runNonInterativeOutputs(function, vectorNumbers, csvLocation, csvFiles, oneMatrixCsv, allMatricesCsv, dataBaseLocation);
+        runNonInteractiveOutputs(function, vectorNumbers, csvLocation, csvFiles, oneMatrixCsv, allMatricesCsv, dataBaseLocation);
     }
     //* ------------------ Fim modos de execução ------------------
 
 
     //* ------------------ Métodos principais ------------------
-    public static void runNonInterativeOutputs(int function, int vectorNumbers, String csvLocation, String[] csvFiles, double[][] oneMatrixCsv, double[][][] allMatricesCsv, String dataBaseLocation) {
+    public static void runNonInteractiveOutputs(int function, int vectorNumbers, String csvLocation, String[] csvFiles, double[][] oneMatrixCsv, double[][][] allMatricesCsv, String dataBaseLocation) {
         double[][] linearizedImages = new double[allMatricesCsv[0].length * allMatricesCsv[0].length][allMatricesCsv.length];
         populateLinearizedImages(linearizedImages, allMatricesCsv);
         double[] averageVectors = calculateMeanVector(linearizedImages);
@@ -160,7 +160,7 @@ public class LAPR1_24_25_DAB_02 {
         System.out.println();
         System.out.println("Funcionalidade 1 finalizada, a retornar ao menu inicial.");
 
-        runInterative();
+        runInteractive();
     }
 
     public static void function2(int function) {
@@ -174,7 +174,7 @@ public class LAPR1_24_25_DAB_02 {
         System.out.println();
         System.out.println("Funcionalidade 2 finalizada, a retornar ao menu inicial.");
 
-        runInterative();
+        runInteractive();
     }
 
     public static void function3(int function) {
@@ -189,7 +189,7 @@ public class LAPR1_24_25_DAB_02 {
         System.out.println();
         System.out.println("Funcionalidade 3 finalizada, a retornar ao menu inicial.");
 
-        runInterative();
+        runInteractive();
     }
 
     public static void function4(int function) {
@@ -203,7 +203,7 @@ public class LAPR1_24_25_DAB_02 {
         System.out.println();
         System.out.println("Funcionalidade 4 finalizada, a retornar ao menu inicial.");
 
-        runInterative();
+        runInteractive();
     }
 
     public static void devTeam() {
@@ -214,7 +214,7 @@ public class LAPR1_24_25_DAB_02 {
         System.out.println();
         System.out.println("A retornar ao menu inicial.");
 
-        runInterative();
+        runInteractive();
     }
     //* ------------------ fim dos métodos principais ------------------
 
@@ -321,7 +321,7 @@ public class LAPR1_24_25_DAB_02 {
 
         double[] principalWeightsVector = calculateWeights(phiPrincipalImage, eigenfaces);
 
-        double[] distances = calculateEuclidianDistance(principalWeightsVector, weightsMatrix);
+        double[] distances = calculateEuclideanDistance(principalWeightsVector, weightsMatrix);
         int[] closestImageIndex = checkCloserVetor(distances);
 
         System.out.println("O número de vetores próprios utilizados: " + vectorNumbers + "\n");
@@ -507,12 +507,12 @@ public class LAPR1_24_25_DAB_02 {
         return eigenValues.getData();
     }
 
-    public static double[][] constructDiagonalMatrix(double[][] matrixvaluesK) {
-        double[][] matrixvaluesKPrint = new double[matrixvaluesK.length][matrixvaluesK.length];
-        for (int i = 0; i < matrixvaluesK.length; i++) {
-            matrixvaluesKPrint[i][i] = matrixvaluesK[i][0];
+    public static double[][] constructDiagonalMatrix(double[][] matrixValuesK) {
+        double[][] matrixValuesKPrint = new double[matrixValuesK.length][matrixValuesK.length];
+        for (int i = 0; i < matrixValuesK.length; i++) {
+            matrixValuesKPrint[i][i] = matrixValuesK[i][0];
         }
-        return matrixvaluesKPrint;
+        return matrixValuesKPrint;
     }
 
     public static double[][] getValuesAndIndexArray(double[][] eigenValuesArray, int eigenfaces) {
@@ -588,7 +588,7 @@ public class LAPR1_24_25_DAB_02 {
         return reconstructed;
     }
 
-    public static double[] calculateEuclidianDistance(double[] principalVector, double[][] weightsMatrix) {
+    public static double[] calculateEuclideanDistance(double[] principalVector, double[][] weightsMatrix) {
         if (principalVector.length != weightsMatrix.length) {
             errorGeneral("O comprimento do vetor principal não corresponde ao número de linhas da matriz de pesos.");
         }
@@ -955,7 +955,7 @@ public class LAPR1_24_25_DAB_02 {
         return vectorNumbers;
     }
 
-    public static void checkExistanceFileDirectory(String csvLocation) {
+    public static void checkExistenceFileDirectory(String csvLocation) {
         try {
             scanner = new Scanner(new File(csvLocation));
         } catch (FileNotFoundException e) {
@@ -1176,7 +1176,7 @@ public class LAPR1_24_25_DAB_02 {
                 } else if (confirmeExit.equals("N")) {
                     System.out.println("A retornar para o menu inicial.");
                     System.out.println();
-                    runInterative();
+                    runInteractive();
                 } else {
                     System.out.println("Erro: Responda com S/N");
                 }
@@ -1245,15 +1245,15 @@ public class LAPR1_24_25_DAB_02 {
             }
         }
 
-        double[][] submatrix = new double[eigenVectors.length][valuesAndIndexArray.length];
+        double[][] subMatrix = new double[eigenVectors.length][valuesAndIndexArray.length];
 
         for (int i = 0; i < eigenVectors.length; i++) {
             for (int j = 0; j < valuesAndIndexArray.length; j++) {
-                submatrix[i][j] = eigenVectors[i][(int) valuesAndIndexArray[j][1]];
+                subMatrix[i][j] = eigenVectors[i][(int) valuesAndIndexArray[j][1]];
             }
         }
 
-        return submatrix;
+        return subMatrix;
     }
     //* ----------------- Fim operações básicas com matrizes ------------------
 
@@ -1589,7 +1589,7 @@ public class LAPR1_24_25_DAB_02 {
     }
 
     public static void checkSubMatrix() {
-        System.out.println("Teste : Submatriz");
+        System.out.println("Teste : SubMatriz");
 
         double[][] inputMatrix = {
                 {1, 2, 3},
@@ -1614,16 +1614,16 @@ public class LAPR1_24_25_DAB_02 {
         checkIgualdadeMatrizes(obtainedResult, expectedResult);
 
         if (checkIgualdadeMatrizes(obtainedResult, expectedResult)) {
-            System.out.println("Submatriz: Teste bem sucedido!");
+            System.out.println("SubMatriz: Teste bem sucedido!");
         } else {
-            System.out.println("Submatriz: Falha - Resultado incorreto.");
+            System.out.println("SubMatriz: Falha - Resultado incorreto.");
             printMatrix(expectedResult, "Esperado", false);
             printMatrix(obtainedResult, "Obtido", false);
         }
         System.out.println();
     }
 
-    public static void checkEuclidianDistance() {
+    public static void checkEuclideanDistance() {
         System.out.println("Teste : Distância Euclidiana");
 
         double[] principalVector = {1, 2, 3};
@@ -1635,7 +1635,7 @@ public class LAPR1_24_25_DAB_02 {
 
         double[] expectedResult = {7.071, 8.775};
 
-        double[] obtainedResult = calculateEuclidianDistance(principalVector, weightMatrix);
+        double[] obtainedResult = calculateEuclideanDistance(principalVector, weightMatrix);
         checkIgualdadeVetores(obtainedResult, expectedResult);
 
         if (checkIgualdadeVetores(obtainedResult, expectedResult)) {
@@ -1886,7 +1886,7 @@ public class LAPR1_24_25_DAB_02 {
         checkTranspose();
         checkSubtractionColumns();
         checkSubMatrix();
-        checkEuclidianDistance();
+        checkEuclideanDistance();
         checkCloserVetorTest();
         checkMAETest();
         checkCalculateWeights();

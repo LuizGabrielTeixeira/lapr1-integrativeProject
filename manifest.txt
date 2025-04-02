@@ -1,3 +1,0 @@
-Main-Class: LAPR1_24_25_DAB_02
-Class-Path: code/lib/commons-math3-3.6.1.jar
-

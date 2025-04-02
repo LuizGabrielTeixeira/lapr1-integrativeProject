@@ -15,6 +15,12 @@ Since a grayscale image can be represented as a matrix, and to facilitate the de
     
 For the execution of these tasks, it is also necessary to implement modules for reading and writing matrices/images stored in folders, as well as modules for calculating a set of statistics and metrics.
 
+## **Application Structure**
+The client requested that the program allow for either an interactive or non-interactive mode (with or without arguments when running the program). If the non-interactive mode is chosen, the system should **verify the output generated after each execution** when the same function is selected again. This is because the .csv and .txt files containing all the output that would be presented on the console (in non-interactive mode) will be overwritten. However, the images are not overwritten, allowing them to be compared.
+
+## **Command Guide for Program Usage: [UsageGuide](UsageGuide.md)**
+
+
 ## **Development Team - TechTitans - LAPR1_24_25_DAB_02**
 | Name                                  | Student number|
 |-----------------------------------------|-----------|
@@ -22,22 +28,6 @@ For the execution of these tasks, it is also necessary to implement modules for 
 | Alexandre Pereira Henrique              | 1240720   |
 | Rafael Pinto Vieira                     | 1241286   |
 | Luiz Gabriel de Souza Sargaço Teixeira  | 1230350   |
-
-## **Application Structure**
-The client requested that the program allow for either an interactive or non-interactive mode (with or without arguments when running the program). If the non-interactive mode is chosen, the system should **verify the output generated after each execution** when the same function is selected again. This is because the .csv and .txt files containing all the output that would be presented on the console (in non-interactive mode) will be overwritten. However, the images are not overwritten, allowing them to be compared.
-
-## **Command Guide for Program Usage:**
-If you wish to use the program in interactive mode, do not provide any arguments, simply use the following command:
-* java -cp "./code/lib/commons-math3-3.6.1.jar" ./code/src/LAPR1_24_25_DAB_02.java
-
-If you wish to use the program in non-interactive mode, provide the arguments as follows:
-* java -cp "./code/lib/commons-math3-3.6.1.jar" ./code/src/LAPR1_24_25_DAB_02.java -f X -k Y -i Z -j W**
-
-Where you should replace X, Y, Z, and W with the following arguments:
-- [ -f ]: This argument, X, accepts the function to be executed, which can be any number from 1 to 4.
-- [ -k ]: This argument, Y, accepts the number of eigenvectors to be used. (If the value is 1 or greater than the total number of available eigenvectors, the maximum number of eigenvectors will be used).
-- [ -i ]: This argument, Z, accepts the location of the input matrix/image (in CSV format) to be used for functions 1 and 3.
-- [ -d ]: This argument, W, accepts the location of the image database (in CSV format) to be used for functions 2, 3, and 4.
 
 ```plaintext
 LAPR1_24_25_DAB_02
