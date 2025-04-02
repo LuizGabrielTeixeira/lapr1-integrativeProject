@@ -82,5 +82,5 @@ LAPR1_24_25_DAB_02
 ```
 
 ### Final Notes:
-- **Score**: 19.20 out of 20 points
+- **Score**: 19.10 out of 20 points
 - The project was evaluated based on the correct implementation of all functions, teamwork, adherence to specifications, and the quality of the code and documentation.
