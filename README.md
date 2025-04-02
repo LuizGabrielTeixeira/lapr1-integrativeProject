@@ -18,7 +18,8 @@ For the execution of these tasks, it is also necessary to implement modules for 
 ## **Application Structure:**
 The client requested that the program allow for either an interactive or non-interactive mode (with or without arguments when running the program). If the non-interactive mode is chosen, the system should **verify the output generated after each execution** when the same function is selected again. This is because the .csv and .txt files containing all the output that would be presented on the console (in non-interactive mode) will be overwritten. However, the images are not overwritten, allowing them to be compared.
 
-## **Command Guide for Program Usage: [UsageGuide](UsageGuide.md)**
+## **Command Guide for Program Usage:** 
+### [UsageGuide](UsageGuide.md) - Click here for detailed instructions!
 
 
 ## **Development Team - TechTitans - LAPR1_24_25_DAB_02:**
